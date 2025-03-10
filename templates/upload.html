@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Video for Transcription</title>
+    <title>Upload File for Transcription</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Upload a Video to Extract Audio and Transcribe</h1>
+        <h1>Upload a Video or Audio File to Transcribe</h1>
         <form action="/upload" method="post" enctype="multipart/form-data">
             <label for="file-upload" class="custom-file-upload">
-                Choose Video File (.mp4)
+                Choose Video or Audio File (.mp4, .mp3, .wav, .m4a)
             </label>
-            <input type="file" name="file" id="file-upload" accept=".mp4" required style="display: none;">
-            <button type="submit">Upload Video</button>
+            <input type="file" name="file" id="file-upload" accept=".mp4, .mp3, .wav, .m4a" required style="display: none;">
+            <button type="submit">Upload File</button>
         </form>
     </div>
 
     <script>
         // Optional: Update label text dynamically based on selected file
         document.getElementById('file-upload').addEventListener('change', function(e) {
-            var fileName = e.target.files[0] ? e.target.files[0].name : 'Choose Video File (.mp4)';
+            var fileName = e.target.files[0] ? e.target.files[0].name : 'Choose Video or Audio File (.mp4, .mp3, .wav, .m4a)';
             document.querySelector('.custom-file-upload').textContent = fileName;
         });
     </script>
